@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { formatCommonCdnImages } from "@/shared/utils/format";
 
 export const metadata: Metadata = {
   title: "프리코 - 앱 다운로드 | 실시간 최저가 알림",
@@ -127,6 +128,8 @@ function GooglePlayIcon() {
 }
 
 export default function AppDownloadPage() {
+  const phoneMockupImage = formatCommonCdnImages("/phone-mockup.png");
+
   return (
     <main className="flex min-h-dvh items-center justify-center bg-white">
       <div className="flex w-full max-w-[1440px] flex-col-reverse justify-center items-center gap-8 px-6 py-16 md:flex-row md:gap-8 md:px-[20px] md:py-0">
@@ -183,7 +186,7 @@ export default function AppDownloadPage() {
         {/* 폰 목업 */}
         <div>
           <Image
-            src="/images/app-download/phone-mockup.png"
+            src={phoneMockupImage}
             alt="Prikko app screenshot"
             width={1736}
             height={3528}

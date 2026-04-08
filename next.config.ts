@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: import.meta.dirname,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "common.cdn.prikko.io",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
